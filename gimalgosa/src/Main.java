@@ -11,10 +11,10 @@ public class Main {
 		
 		if(vUserInfo != null) {
 			System.out.println("다음 단계");
-		} else {
-			System.out.println("재설정");
 			PSugangsincheong pSugangsincheong = new PSugangsincheong(vUserInfo);
 			pSugangsincheong.run();
+		} else {
+			
 		}
 		
 		
