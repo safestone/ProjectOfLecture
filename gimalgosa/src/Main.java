@@ -14,7 +14,7 @@ public class Main {
 			PSugangsincheong pSugangsincheong = new PSugangsincheong(vUserInfo);
 			pSugangsincheong.run();
 		} else {
-			
+			System.out.println("확인");
 		}
 		
 		

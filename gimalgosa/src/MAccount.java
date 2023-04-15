@@ -6,7 +6,7 @@ public class MAccount {
 
 	public VUserInfo login(VLogin vLogin) {
 		try {
-			Scanner sc= new Scanner(new File("C:\\Users\\DONG\\git\\ProjectOfLecture\\gimalgosa\\data\\Account"));
+			Scanner sc= new Scanner(new File("data/Account"));
 			VUserInfo vUserInfo = null;
 			while (sc.hasNext()) {
 				String line = sc.nextLine();
