@@ -7,6 +7,9 @@ public class VLecture {
 	private String SubjectEnglish;
 	private String lectureKorean;
 	private String lectureEnglish;
+	private String LectureNumber;
+	private String SeletInformation;
+	private String SeletCredit;
 	
 	public String getRootKorean() {
 		return RootKorean;
@@ -41,8 +44,29 @@ public class VLecture {
 	public String getdepartmentEnglish() {
 		return lectureEnglish;
 	}
+	public String getLectureEnglish() {
+		return lectureEnglish;
+	}
 	public void setLectureEnglish(String lectureEnglish) {
 		this.lectureEnglish = lectureEnglish;
+	}
+	public String getLectureNumber() {
+		return LectureNumber;
+	}
+	public void setLectureNumber(String lectureNumber) {
+		LectureNumber = lectureNumber;
+	}
+	public String getSeletInformation() {
+		return SeletInformation;
+	}
+	public void setSeletInformation(String seletInformation) {
+		this.SeletInformation = seletInformation;
+	}
+	public String getSeletCredit() {
+		return SeletCredit;
+	}
+	public void setSeletCredit(String seletCredit) {
+		this.SeletCredit = seletCredit;
 	}
 
 }

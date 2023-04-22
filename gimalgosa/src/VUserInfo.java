@@ -52,8 +52,8 @@ public class VUserInfo {
 		return Credit;
 	}
 	
-	public void setCredit(String credit) {
-		this.Credit = credit;
+	public void setCredit(String information) {
+		this.Credit = information;
 	}
 
 

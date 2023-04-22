@@ -1,24 +1,27 @@
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class PFindLecture {
-
+	
 	public PFindLecture(VUserInfo vUserInfo) {
 	}
 
-	public void run(VUserInfo vUserInfo) throws FileNotFoundException {
+	public void run(VUserInfo vUserInfo) throws IOException {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println(vUserInfo.getName() + " : " + vUserInfo.getRoot() + " " + vUserInfo.getDepartment());
+		int num1 = Integer.valueOf(vUserInfo.getCredit());
+		vUserInfo.setCredit(String.valueOf(num1));
 		System.out.println("선택하고자 하는 캠퍼스의 번호를 입력해주세요");
 		System.out.println("1. 용인 2. 서울");
 		String root = scanner.next();
 		
-		VSugangsincheong vSugangsincheong = new VSugangsincheong();
-		vSugangsincheong.setRoot(root);
+		VFindLecture vFindLecture = new VFindLecture();
+		vFindLecture.setRoot(root);
 		
-		CSugangsincheong cSugangsincheong = new CSugangsincheong();
-		VLecture vLecture = cSugangsincheong.Sugangsincheong(vSugangsincheong);
+		CFindLecture cFindLecture = new CFindLecture();
+		VLecture vLecture = cFindLecture.Sugangsincheong(vFindLecture);
 		
 		if(vLecture != null) {
 			System.out.println(vLecture.getRootKorean());
@@ -40,9 +43,9 @@ public class PFindLecture {
 			}
 		}
 		String subject = scanner.next();
-		vSugangsincheong.setSubject(subject);
-		vSugangsincheong.setRoot(vLecture.getRootEnglish());
-		vLecture = cSugangsincheong.Subject(vSugangsincheong);
+		vFindLecture.setSubject(subject);
+		vFindLecture.setRoot(vLecture.getRootEnglish());
+		vLecture = cFindLecture.Subject(vFindLecture);
 		
 		System.out.println(vLecture.getSubjectKorean());
 		System.out.println("원하시는 선택지의 번호를 입력해주세요");
@@ -51,17 +54,38 @@ public class PFindLecture {
 			String str = sc.nextLine();
 			System.out.println(str);
 		}
-		vSugangsincheong.setSubject(vLecture.getSubjectEnglish());
+		vFindLecture.setSubject(vLecture.getSubjectEnglish());
 		System.out.println("원하시는 선택지의 번호를 입력해주세요");
 		String departmentNum = scanner.next();
-		vSugangsincheong.setLectureNum(departmentNum);
-		vLecture = cSugangsincheong.lecture(vSugangsincheong);
+		vFindLecture.setLectureNum(departmentNum);
+		vLecture = cFindLecture.lecture(vFindLecture);
 		
 		System.out.println(vLecture.getLectureKorean());
+		System.out.println("원하시는 선택지의 번호를 입력해주세요");
 		Scanner sc1 = new Scanner(new File("data/"+vLecture.getdepartmentEnglish()+".txt"));
 		while(sc1.hasNext()) {
 			String str = sc1.nextLine();
 			System.out.println(str);
 		}
+		int num = scanner.nextInt();
+		vFindLecture.setSelectNum(num);
+		vFindLecture.setSelect(vLecture.getLectureNumber());
+		vFindLecture.setSelectEnglish(vLecture.getLectureEnglish());
+		vLecture = cFindLecture.select(vFindLecture);
+		
+		System.out.println(vLecture.getSeletInformation());
+		
+		File file = new File("data/miridamgi"+vUserInfo.getName()+".txt");
+		BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+		writer.write(vLecture.getSeletInformation());
+		writer.newLine();
+		
+		writer.flush();
+		writer.close();
+		
+		
+		int num2 = Integer.valueOf(vLecture.getSeletCredit());
+		int sum = num1 - num2;
+		System.out.println("남은 학점 : " + sum);
 	}
 }

@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -17,11 +17,25 @@ public class Main {
 			sc = new Scanner(System.in);
 			while (true) {
 				if(vUserInfo != null) {
-					PFindLecture pFindLecture = new PFindLecture(vUserInfo);
-					pFindLecture.run(vUserInfo);
-					break;
+					System.out.println(vUserInfo.getName() + " : " + vUserInfo.getRoot() + " | " + vUserInfo.getDepartment() + " | 최대 수강 학점 : " + vUserInfo.getCredit() + "학점 |");
+					while(true) {
+						System.out.println("번호를 선택해주세요.");
+						System.out.println("1. 강좌 조회 2. 책가방 3. 종료");
+						int num = sc.nextInt();
+						if(num == 1) {
+							PFindLecture pFindLecture = new PFindLecture(vUserInfo);
+							pFindLecture.run(vUserInfo);
+						} else if (num == 2) {
+							PSugangsincheong pSugangsincheong = new PSugangsincheong();
+							pSugangsincheong.run(vUserInfo);
+						} else if (num == 3) {
+							System.out.println("종료되었습니다.");
+							System.exit(0);
+						}
+						
+					}
 				} else {
-					System.out.println("1. 로그인 다시 시도 2. 아이디 찾기 3. 비밀번호 찾기");
+					System.out.println("1. 로그인 다시 시도 2. 아이디 찾기 3. 비밀번호 찾기 4.종료");
 					int answer = sc.nextInt();
 					if (answer == 1) {
 						vUserInfo = pLogin.login();
@@ -31,10 +45,13 @@ public class Main {
 					} else if (answer == 3) {
 						PFindPW pFindPW = new PFindPW();
 						pFindPW.FindPW();
+					} else if (answer == 4) {
+						System.out.println("종료되었습니다.");
+						System.exit(0);
 					}
 				}
 			}
-		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
