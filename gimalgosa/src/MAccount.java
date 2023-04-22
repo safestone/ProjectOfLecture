@@ -17,6 +17,7 @@ public class MAccount {
 						vUserInfo.setName(Information[2]);
 						vUserInfo.setRoot(Information[4]);
 						vUserInfo.setDepartment(Information[5]);
+						vUserInfo.setCredit(Information[6]);
 						break;
 					}
 				}

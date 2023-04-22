@@ -6,7 +6,8 @@ public class VUserInfo {
 	private String Pw;
 	private String root;
 	private String department;
-	
+	private String Credit;
+
 	public String getName() {
 		return name;
 	}
@@ -45,6 +46,14 @@ public class VUserInfo {
 
 	public void setDepartment(String department) {
 		this.department = department;
+	}
+
+	public String getCredit() {
+		return Credit;
+	}
+	
+	public void setCredit(String credit) {
+		this.Credit = credit;
 	}
 
 
