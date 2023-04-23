@@ -96,7 +96,7 @@ public class MFindLecture {
 			while(scanner.hasNext()) {
 				String line = scanner.nextLine();
 				String[] SeletInformation = line.split("\\s");
-				if(line.contains(vFindLecture.getSelect())) {
+				if(SeletInformation[0].equals(vFindLecture.getSelectNum())) {
 					vLecture.setSeletInformation(line);
 					vLecture.setSeletCredit(SeletInformation[3]);
 				}

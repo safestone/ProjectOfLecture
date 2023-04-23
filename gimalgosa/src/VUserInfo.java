@@ -7,6 +7,8 @@ public class VUserInfo {
 	private String root;
 	private String department;
 	private String Credit;
+	private String UseCredit;
+	private String RemoveCredit;
 
 	public String getName() {
 		return name;
@@ -56,12 +58,20 @@ public class VUserInfo {
 		this.Credit = information;
 	}
 
+	public String getUseCredit() {
+		return UseCredit;
+	}
 
+	public void setUseCredit(String useCredit) {
+		this.UseCredit = useCredit;
+	}
 
+	public String getRemoveCredit() {
+		return RemoveCredit;
+	}
 
-
-
-
-
+	public void setRemoveCredit(String removeCredit) {
+		this.RemoveCredit = removeCredit;
+	}
 
 }

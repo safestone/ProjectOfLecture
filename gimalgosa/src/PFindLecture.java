@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class PFindLecture {
 	
+	private Scanner scanner;
+
 	public PFindLecture(VUserInfo vUserInfo) {
 	}
 
 	public void run(VUserInfo vUserInfo) throws IOException {
-		Scanner scanner = new Scanner(System.in);
-		int num1 = Integer.valueOf(vUserInfo.getCredit());
-		vUserInfo.setCredit(String.valueOf(num1));
+		scanner = new Scanner(System.in);
 		System.out.println("선택하고자 하는 캠퍼스의 번호를 입력해주세요");
 		System.out.println("1. 용인 2. 서울");
 		String root = scanner.next();
@@ -55,7 +55,6 @@ public class PFindLecture {
 			System.out.println(str);
 		}
 		vFindLecture.setSubject(vLecture.getSubjectEnglish());
-		System.out.println("원하시는 선택지의 번호를 입력해주세요");
 		String departmentNum = scanner.next();
 		vFindLecture.setLectureNum(departmentNum);
 		vLecture = cFindLecture.lecture(vFindLecture);
@@ -67,7 +66,7 @@ public class PFindLecture {
 			String str = sc1.nextLine();
 			System.out.println(str);
 		}
-		int num = scanner.nextInt();
+		String num = scanner.next();
 		vFindLecture.setSelectNum(num);
 		vFindLecture.setSelect(vLecture.getLectureNumber());
 		vFindLecture.setSelectEnglish(vLecture.getLectureEnglish());
@@ -84,8 +83,5 @@ public class PFindLecture {
 		writer.close();
 		
 		
-		int num2 = Integer.valueOf(vLecture.getSeletCredit());
-		int sum = num1 - num2;
-		System.out.println("남은 학점 : " + sum);
 	}
 }

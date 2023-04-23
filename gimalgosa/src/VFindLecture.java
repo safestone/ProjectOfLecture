@@ -3,7 +3,7 @@ public class VFindLecture {
 	private String Root;
 	private String Subject;
 	private String lectureNum;
-	private int SelectNum;
+	private String SelectNum;
 	private String Select;
 	private String SelectEnglish;
 	
@@ -31,12 +31,12 @@ public class VFindLecture {
 		this.lectureNum = lectureNum;
 	}
 
-	public int getSelectNum() {
+	public String getSelectNum() {
 		return SelectNum;
 	}
 
-	public void setSelectNum(int selectNum) {
-		this.SelectNum = selectNum;
+	public void setSelectNum(String num) {
+		this.SelectNum = num;
 	}
 
 	public String getSelect() {
