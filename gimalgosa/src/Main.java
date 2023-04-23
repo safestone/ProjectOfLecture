@@ -20,7 +20,7 @@ public class Main {
 					System.out.println(vUserInfo.getName() + " : " + vUserInfo.getRoot() + " | " + vUserInfo.getDepartment() + " | 최대 수강 학점 : " + vUserInfo.getCredit() + "학점 |");
 					while(true) {
 						System.out.println("번호를 선택해주세요.");
-						System.out.println("1. 강좌 조회 2. 책가방 3. 종료");
+						System.out.println("1. 강좌 조회 | 2. 책가방 | 3. 종료 |");
 						int num = sc.nextInt();
 						if(num == 1) {
 							PFindLecture pFindLecture = new PFindLecture(vUserInfo);
@@ -35,7 +35,7 @@ public class Main {
 						
 					}
 				} else {
-					System.out.println("1. 로그인 다시 시도 2. 아이디 찾기 3. 비밀번호 찾기 4.종료");
+					System.out.println("1. 로그인 다시 시도 | 2. 아이디 찾기 | 3. 비밀번호 찾기 | 4.종료 |");
 					int answer = sc.nextInt();
 					if (answer == 1) {
 						vUserInfo = pLogin.login();

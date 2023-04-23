@@ -9,7 +9,7 @@ public class VLecture {
 	private String lectureEnglish;
 	private String LectureNumber;
 	private String SeletInformation;
-	private String SeletCredit;
+	private int SeletCredit;
 	
 	public String getRootKorean() {
 		return RootKorean;
@@ -62,10 +62,10 @@ public class VLecture {
 	public void setSeletInformation(String seletInformation) {
 		this.SeletInformation = seletInformation;
 	}
-	public String getSeletCredit() {
+	public int getSeletCredit() {
 		return SeletCredit;
 	}
-	public void setSeletCredit(String seletCredit) {
+	public void setSeletCredit(int seletCredit) {
 		this.SeletCredit = seletCredit;
 	}
 

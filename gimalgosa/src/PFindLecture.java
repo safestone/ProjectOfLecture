@@ -60,7 +60,7 @@ public class PFindLecture {
 		vLecture = cFindLecture.lecture(vFindLecture);
 		
 		System.out.println(vLecture.getLectureKorean());
-		System.out.println("원하시는 선택지의 번호를 입력해주세요");
+		System.out.println("책가방에 담을 강좌의 번호를 입력해주세요.");
 		Scanner sc1 = new Scanner(new File("data/"+vLecture.getdepartmentEnglish()+".txt"));
 		while(sc1.hasNext()) {
 			String str = sc1.nextLine();
@@ -82,6 +82,6 @@ public class PFindLecture {
 		writer.flush();
 		writer.close();
 		
-		
+			
 	}
 }

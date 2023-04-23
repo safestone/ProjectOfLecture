@@ -98,7 +98,7 @@ public class MFindLecture {
 				String[] SeletInformation = line.split("\\s");
 				if(SeletInformation[0].equals(vFindLecture.getSelectNum())) {
 					vLecture.setSeletInformation(line);
-					vLecture.setSeletCredit(SeletInformation[3]);
+					vLecture.setSeletCredit(Integer.parseInt(SeletInformation[3]));
 				}
 			}
 			scanner.close();

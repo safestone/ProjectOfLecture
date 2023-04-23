@@ -6,9 +6,10 @@ public class VUserInfo {
 	private String Pw;
 	private String root;
 	private String department;
-	private String Credit;
-	private String UseCredit;
-	private String RemoveCredit;
+	private int Credit;
+	private int UseCredit;
+	private int RemoveCredit;
+	private int CompleteCredit;
 
 	public String getName() {
 		return name;
@@ -50,28 +51,37 @@ public class VUserInfo {
 		this.department = department;
 	}
 
-	public String getCredit() {
+	public int getCredit() {
 		return Credit;
 	}
 	
-	public void setCredit(String information) {
+	public void setCredit(int information) {
 		this.Credit = information;
 	}
 
-	public String getUseCredit() {
+	public int getUseCredit() {
 		return UseCredit;
 	}
 
-	public void setUseCredit(String useCredit) {
+	public void setUseCredit(int useCredit) {
 		this.UseCredit = useCredit;
 	}
 
-	public String getRemoveCredit() {
+	public int getRemoveCredit() {
 		return RemoveCredit;
 	}
 
-	public void setRemoveCredit(String removeCredit) {
+	public void setRemoveCredit(int removeCredit) {
 		this.RemoveCredit = removeCredit;
 	}
+
+	public int getCompleteCredit() {
+		return CompleteCredit;
+	}
+
+	public void setCompleteCredit(int completeCredit) {
+		this.CompleteCredit = completeCredit;
+	}
+
 
 }
