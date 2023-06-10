@@ -19,7 +19,7 @@ public class PLectureSelection {
 		this.CLecture = new CLecture();
 	}
 	
-	private String selectIndex(String message, String fileName, Scanner keyboard) {
+	public String selectIndex(String message, String fileName, Scanner keyboard) {
 		System.out.println(message);
 		Vector<VIndex> vIndexVector = cIndex.getVIndexVector("data/"+fileName+".txt");
 		for(VIndex vIndex: vIndexVector) {
@@ -63,12 +63,16 @@ public class PLectureSelection {
 		}
 		return null;
 	}
+	
 	public VLecture selectLecture(VUserInfo vUserInfo, Scanner keyboard) {
 		String campusFileName =selectIndex("캠퍼스 코드를 선택하세요", "root", keyboard);
 		String collegeFileName = selectIndex("대학 코드를 선택하세요", campusFileName, keyboard);
 		String departmentFileName = selectIndex("과목 코드를 선택하세요", collegeFileName, keyboard);
 		
 		VLecture vLecture = terminal("강좌 코드를 선택하세요", departmentFileName, keyboard);
+		
+		vLecture.show();
+		
 		return vLecture;
 		}
 }

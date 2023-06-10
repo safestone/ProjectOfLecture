@@ -27,6 +27,7 @@ public class Main {
 					System.out.println("| " + vUserInfo.getName() + " | " + vUserInfo.getRoot() + " | " + vUserInfo.getDepartment() + " | 최대 수강 학점 : " + vUserInfo.getCredit() + "학점 |");
 					pSugangsincheong = new PSugangsincheong();
 					pSugangsincheong.run(vUserInfo, keyboard);
+					vUserInfo = null;
 				} else {
 					System.out.println("1. 로그인 다시 시도 | 2. 아이디 찾기 | 3. 비밀번호 찾기 | 4.종료 |");
 					int answer = keyboard.nextInt();
@@ -47,6 +48,7 @@ public class Main {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getLocalizedMessage();
+			System.out.println(e.getLocalizedMessage());
 		}
 
 	}

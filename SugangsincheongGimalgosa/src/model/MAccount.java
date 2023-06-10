@@ -21,6 +21,7 @@ public class MAccount {
 				if(Information[0].equals(vLogin.getUserId())){
 					if (Information[1].equals(vLogin.getpassword())) {
 						vUserInfo = new VUserInfo();
+						vUserInfo.setId(Information[0]);
 						vUserInfo.setName(Information[2]);
 						vUserInfo.setRoot(Information[4]);
 						vUserInfo.setDepartment(Information[5]);
