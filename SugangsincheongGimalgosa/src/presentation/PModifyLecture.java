@@ -1,7 +1,6 @@
 package presentation;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -53,9 +52,7 @@ public class PModifyLecture {
 				String lectureInfo = keyboard.nextLine();
 				
 				cModifyLecture.addLecture(lectureInfo, departmentFileName);
-				
-				terminal(departmentFileName);
-		        
+						        
 				break;
 			case 1:
 				campusFileName =pLectureSelection.selectIndex("캠퍼스 코드를 선택하세요", "root", keyboard);
