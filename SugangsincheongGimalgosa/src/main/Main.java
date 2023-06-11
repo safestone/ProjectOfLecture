@@ -14,18 +14,18 @@ public class Main {
 	private PSugangsincheong pSugangsincheong;
 	
 	public Main() {
-		
+		pLogin = new PLogin();
+		pSugangsincheong = new PSugangsincheong();
 	}
+	
 	private void run() {
 		try {
 			keyboard = new Scanner(System.in);
-			pLogin = new PLogin();
 			VUserInfo vUserInfo = pLogin.login(keyboard);
 			
 			while (true) {
 				if(vUserInfo != null) {
 					System.out.println("| " + vUserInfo.getName() + " | " + vUserInfo.getRoot() + " | " + vUserInfo.getDepartment() + " | 최대 수강 학점 : " + vUserInfo.getCredit() + "학점 |");
-					pSugangsincheong = new PSugangsincheong();
 					pSugangsincheong.run(vUserInfo, keyboard);
 					vUserInfo = null;
 				} else {

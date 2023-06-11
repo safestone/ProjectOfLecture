@@ -11,9 +11,7 @@ public class MIndex {
 	public Vector<VIndex> nextIndex(String fileName) {
 		Vector<VIndex> vindexVector = null;
 		try {
-			Scanner File = new Scanner(new File(fileName));
-			vindexVector = new Vector<VIndex>();
-	
+			Scanner File = new Scanner(new File(fileName));	
 			vindexVector = new Vector<VIndex>();
 			while(File.hasNext()) {
 				VIndex vIndex = new VIndex();

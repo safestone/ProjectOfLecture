@@ -34,7 +34,6 @@ public class PLectureBasket {
 			switch(select) {
 			case 0:
 				cLectureBasket.addBasket(vUserInfo, vLectureVector); //강좌를 책가방에 추가
-				bRunnig = false;
 				break;
 			case 1:
 				cLectureBasket.lookBasket(vUserInfo); //책가방 조회				
@@ -77,7 +76,6 @@ public class PLectureBasket {
 				break;
 			case 1:
 				cLectureBasket.sincheong(vUserInfo, vLectureVector, code);  //강좌 선택에서 선택한 강좌를 신청함.
-				bRunnig = false;
 				break;
 			case 2:
 				cLectureBasket.lookSincheong(vUserInfo);  //신청한 강좌 조회

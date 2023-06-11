@@ -3,7 +3,6 @@ package control;
 import java.util.Vector;
 
 import model.MLecture;
-import valueObject.VIndex;
 import valueObject.VLecture;
 
 public class CLecture {

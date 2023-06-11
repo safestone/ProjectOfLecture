@@ -4,12 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.Vector;
 
-import control.CIndex;
-import control.CLecture;
 import control.CStudentRegister;
-import valueObject.VIndex;
 import valueObject.VLecture;
 import valueObject.VUserInfo;
 
@@ -19,6 +15,7 @@ public class PSugangsincheong {
 	private PLectureBasket pSincheongBaskt;
 	private CStudentRegister cStudentRegister;
 	private PModifyLecture pModifyLecture;
+	private PCommunity pCommunity;
 
 	public PSugangsincheong() {
 		this.pLectureSelection = new PLectureSelection();
@@ -26,6 +23,7 @@ public class PSugangsincheong {
 		this.pSincheongBaskt = new PLectureBasket();
 		this.cStudentRegister = new CStudentRegister();
 		this.pModifyLecture = new PModifyLecture();
+		this.pCommunity = new PCommunity();
 	}
 	
 	public void run(VUserInfo vUserInfo, Scanner keyboard) throws IOException {
@@ -34,9 +32,9 @@ public class PSugangsincheong {
 		while(bRunning) {
 			
 			if(vUserInfo.getId().equals("admin")) {
-				System.out.println("4.학생 등록 5.학생 조회 6. 학생 삭제 7.강좌 수정 9.로그아웃");
+				System.out.println("3.게시판 4.학생 등록 5.학생 조회 6. 학생 삭제 7.강좌 수정 9.로그아웃");
 			} else {
-				System.out.println("0.강좌 선택 1.미리담기 2.수강신청 9.로그아웃");
+				System.out.println("0.강좌 선택 1.미리담기 2.수강신청 3.게시판 9.로그아웃");
 			}
 			
 			String command = keyboard.next();
@@ -53,6 +51,9 @@ public class PSugangsincheong {
 			case 2:
 				pSincheongBaskt.add(vLecture);
 				pSincheongBaskt.sincheong(vUserInfo, keyboard);
+				break;
+			case 3:
+				pCommunity.community(vUserInfo, keyboard);
 				break;
 			case 4:
 				System.out.println("ID PW 이름 생년월일 학과 최대수강학점");

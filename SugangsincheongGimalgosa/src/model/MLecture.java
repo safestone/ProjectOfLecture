@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Vector;
 
-import valueObject.VIndex;
 import valueObject.VLecture;
 
 public class MLecture {
